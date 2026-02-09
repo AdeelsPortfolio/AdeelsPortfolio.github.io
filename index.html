@@ -62,14 +62,55 @@
     .role{display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap}
     .role b{font-size:15px}
     .role span{color:var(--muted); font-size:13px}
-    .logoGrid{display:grid; grid-template-columns:repeat(2, 1fr); gap:12px; margin-top:10px}
-    @media(min-width:900px){ .logoGrid{grid-template-columns:repeat(5, 1fr)} }
-    .logo{
-      display:flex; align-items:center; justify-content:center; gap:10px;
-      border:1px solid var(--line); border-radius:16px; padding:12px; background:rgba(255,255,255,.03);
-      min-height:76px;
-    }
-    .logo img{max-height:44px; max-width:100%; display:block}
+
+    /* === Certification Grid (3 per row, larger logos) === */
+.logoGrid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:20px;
+  margin-top:14px;
+}
+
+@media(max-width:900px){
+  .logoGrid{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media(max-width:520px){
+  .logoGrid{
+    grid-template-columns: 1fr;
+  }
+}
+
+.logo{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-start;
+  gap:10px;
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:18px 14px;
+  background:rgba(255,255,255,.035);
+  min-height:170px;
+  text-align:center;
+}
+
+.logoTitle{
+  font-size:14px;
+  font-weight:600;
+  letter-spacing:.03em;
+  color:var(--text);
+}
+
+.logo img{
+  max-height:62px;   /* ~40% larger */
+  max-width:100%;
+  display:block;
+}
+
+    
     .logo span{color:var(--muted); font-size:13px}
     .footer{margin-top:26px; color:var(--muted); font-size:13px}
     .small{font-size:12px}
@@ -174,34 +215,43 @@
 
         <div class="logoGrid">
 
-          <a class="logo" href="https://www.credly.com/badges/8632f339-561b-4e9c-8f62-d1d7276effde" target="_blank" rel="noreferrer" title="PMP (Credly Verification)">
-            <img src="img/PMI-PMP_Badge.png" alt="PMP badge"/>
-          </a>
+  <a class="logo"
+     href="https://www.credly.com/badges/8632f339-561b-4e9c-8f62-d1d7276effde"
+     target="_blank" rel="noreferrer">
+    <div class="logoTitle">PMP</div>
+    <img src="img/PMI-PMP_Badge.png" alt="PMP badge">
+  </a>
 
-        
-          <a class="logo" href="https://www.credly.com/badges/df4c6380-a8da-4bb8-b2a2-7df61a120e0f/public_url" target="_blank" rel="noreferrer" title="PMI-ACP (Credly Verification)">
-            <img src="img/PMI-ACP_Badge.png" alt="PMI-ACP badge"/>
-          </a>
+  <a class="logo"
+     href="https://www.credly.com/badges/df4c6380-a8da-4bb8-b2a2-7df61a120e0f/public_url"
+     target="_blank" rel="noreferrer">
+    <div class="logoTitle">PMI-ACP</div>
+    <img src="img/PMI-ACP_Badge.png" alt="PMI-ACP badge">
+  </a>
 
-          <div class="logo" title="Gen. AI PM">
-            <img src="img/CGAIPM_BADGE.jpg" alt="CGAIPM badge"/>
-          </div>
-          
-          <div class="logo" title="CSM">
-            <img src="img/CSM_Badge.png" alt="CSM badge"/>
-          </div>
-        
-          <div class="logo" title="ITIL">
-            <img src="img/ITIL_Badge.png" alt="ITIL badge"/>
-          </div>
-        
-          <div class="logo" title="PRINCE2">
-            <img src="img/Prince2_Badge.png" alt="PRINCE2"/>
-          </div>
-        
-        </div>
+  <div class="logo">
+    <div class="logoTitle">Gen. AI in PM</div>
+    <img src="img/CGAIPM_BADGE.jpg" alt="Generative AI in Project Management">
+  </div>
 
+  <div class="logo">
+    <div class="logoTitle">ITIL</div>
+    <img src="img/ITIL_Badge" alt="ITIL badge">
+  </div>
 
+  <div class="logo">
+    <div class="logoTitle">PRINCE2</div>
+    <img src="img/Prince2_Badge.png" alt="PRINCE2 badge">
+  </div>
+
+  <div class="logo">
+    <div class="logoTitle">CSM</div>
+    <img src="img/CSM_Badge.png" alt="Certified ScrumMaster badge">
+  </div>
+
+</div>
+
+   
         <div class="card" style="margin-top:12px; background:rgba(255,255,255,.02)">
           <div class="muted small">
             <b>Badge setup:</b> once you paste your badge URLs above, the logo grid becomes a strong “credibility bar.”
