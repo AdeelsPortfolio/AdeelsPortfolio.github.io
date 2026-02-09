@@ -115,6 +115,68 @@
     .footer{margin-top:26px; color:var(--muted); font-size:13px}
     .small{font-size:12px}
     .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;}
+
+    /* THEME PREVIEW START: Theme 1 - Executive Glass + Accent Line */
+:root{
+  --accent:#8ab4ff;
+  --cardGlow: rgba(138,180,255,.10);
+}
+
+.card{
+  background: linear-gradient(180deg, rgba(255,255,255,.075), rgba(255,255,255,.03));
+  border: 1px solid rgba(255,255,255,.12);
+  box-shadow: 0 14px 40px rgba(0,0,0,.30);
+  backdrop-filter: blur(10px);
+}
+
+h2{
+  position: relative;
+  padding-left: 12px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+h2::before{
+  content:"";
+  position:absolute;
+  left:0; top:2px;
+  width:3px; height:16px;
+  border-radius: 8px;
+  background: linear-gradient(180deg, var(--accent), rgba(121,255,210,.55));
+  box-shadow: 0 0 18px var(--cardGlow);
+}
+
+.btn{
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.035);
+}
+
+.btn.primary{
+  border-color: rgba(138,180,255,.55);
+  background: rgba(138,180,255,.14);
+}
+
+.tile{
+  transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+}
+.tile:hover{
+  transform: translateY(-2px);
+  border-color: rgba(138,180,255,.28);
+  box-shadow: 0 12px 28px rgba(0,0,0,.28);
+}
+
+.logo{
+  border-color: rgba(255,255,255,.14);
+  background: rgba(255,255,255,.03);
+}
+.logo:hover{
+  border-color: rgba(138,180,255,.30);
+}
+/* THEME PREVIEW END */
+     
   </style>
 </head>
 <body>
