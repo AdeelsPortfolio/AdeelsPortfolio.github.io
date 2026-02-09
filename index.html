@@ -3,149 +3,218 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Adeel Ahmad | PMO Director & GenAI-Enabled Delivery</title>
-  <meta name="description" content="PMO Director and transformation leader delivering portfolio governance, agile/hybrid execution, and GenAI-enabled reporting, forecasting, and risk insights." />
+  <title>Adeel Ahmad | PMO Director • GenAI & Digital Transformation</title>
+  <meta name="description" content="PMO Director building portfolio governance, agile/hybrid execution, and GenAI-enabled reporting, forecasting, and risk insights for faster, better decisions." />
   <style>
     :root{
       --bg:#0b0f19; --card:#121a2b; --text:#e9eefc; --muted:#a9b4d0;
-      --line:rgba(255,255,255,.10); --accent:#7aa7ff;
+      --line:rgba(255,255,255,.10); --accent:#7aa7ff; --good:#79ffd2;
     }
     *{box-sizing:border-box}
     body{
-      margin:0; background:radial-gradient(1200px 600px at 20% -10%, rgba(122,167,255,.18), transparent 60%),
-                         radial-gradient(900px 500px at 90% 10%, rgba(122,255,210,.10), transparent 60%),
-                         var(--bg);
-      color:var(--text); font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      margin:0;
+      background:
+        radial-gradient(1200px 600px at 20% -10%, rgba(122,167,255,.18), transparent 60%),
+        radial-gradient(900px 500px at 90% 10%, rgba(121,255,210,.10), transparent 60%),
+        var(--bg);
+      color:var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       line-height:1.55;
     }
     a{color:var(--accent); text-decoration:none}
     a:hover{text-decoration:underline}
-    .wrap{max-width:980px; margin:0 auto; padding:44px 18px 64px}
-    .nav{display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:22px}
+    .wrap{max-width:1040px; margin:0 auto; padding:44px 18px 70px}
+    .nav{display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:22px; flex-wrap:wrap}
     .pill{border:1px solid var(--line); padding:8px 12px; border-radius:999px; color:var(--muted); font-size:14px}
-    .hero{padding:26px 0 10px}
-    h1{margin:0; font-size:40px; letter-spacing:-.02em}
-    .headline{margin-top:10px; color:var(--muted); font-size:18px; max-width:800px}
-    .grid{display:grid; grid-template-columns:1fr; gap:14px; margin-top:18px}
-    @media(min-width:860px){ .grid{grid-template-columns:1.2fr .8fr} }
-    .card{
-      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
-      border:1px solid var(--line); border-radius:16px; padding:16px 16px;
-      box-shadow: 0 12px 30px rgba(0,0,0,.25);
-    }
-    h2{margin:0 0 10px; font-size:18px}
-    ul{margin:8px 0 0 18px; padding:0}
-    li{margin:8px 0; color:var(--text)}
-    .muted{color:var(--muted)}
-    .kpi{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:8px}
-    .kpi .box{border:1px solid var(--line); border-radius:14px; padding:12px}
-    .kpi .num{font-size:22px; font-weight:700}
-    .kpi .lbl{color:var(--muted); font-size:13px; margin-top:2px}
-    .section{margin-top:16px}
-    .role{display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap}
-    .role b{font-size:15px}
-    .role span{color:var(--muted); font-size:13px}
-    .footer{margin-top:26px; color:var(--muted); font-size:13px}
-    .btnrow{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px}
+    h1{margin:0; font-size:42px; letter-spacing:-.02em}
+    .subhead{margin-top:10px; color:var(--muted); font-size:18px; max-width:860px}
+    .btnrow{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px}
     .btn{
       display:inline-block; padding:10px 14px; border-radius:12px;
       border:1px solid var(--line); background:rgba(255,255,255,.04);
       color:var(--text);
     }
     .btn.primary{border-color:rgba(122,167,255,.55); background:rgba(122,167,255,.12)}
+    .grid{display:grid; grid-template-columns:1fr; gap:14px; margin-top:18px}
+    @media(min-width:900px){ .grid{grid-template-columns:1.2fr .8fr} }
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid var(--line); border-radius:16px; padding:16px 16px;
+      box-shadow: 0 12px 30px rgba(0,0,0,.25);
+    }
+    h2{margin:0 0 10px; font-size:18px}
+    p{margin:10px 0 0}
+    ul{margin:8px 0 0 18px; padding:0}
+    li{margin:8px 0}
+    .muted{color:var(--muted)}
+    .section{margin-top:16px}
+    .kpi{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:10px}
+    .kpi .box{border:1px solid var(--line); border-radius:14px; padding:12px}
+    .kpi .num{font-size:22px; font-weight:800}
+    .kpi .lbl{color:var(--muted); font-size:13px; margin-top:2px}
+    .tiles{display:grid; grid-template-columns:1fr; gap:12px; margin-top:10px}
+    @media(min-width:900px){ .tiles{grid-template-columns:1fr 1fr 1fr} }
+    .tile{border:1px solid var(--line); border-radius:16px; padding:14px; background:rgba(255,255,255,.03)}
+    .tag{display:inline-block; font-size:12px; color:var(--good); border:1px solid rgba(121,255,210,.25);
+      padding:4px 9px; border-radius:999px; margin-bottom:10px}
+    .tile h3{margin:0 0 6px; font-size:15px}
+    .tile p{margin:8px 0 0; color:var(--muted); font-size:14px}
+    .role{display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap}
+    .role b{font-size:15px}
+    .role span{color:var(--muted); font-size:13px}
+    .logoGrid{display:grid; grid-template-columns:repeat(2, 1fr); gap:12px; margin-top:10px}
+    @media(min-width:900px){ .logoGrid{grid-template-columns:repeat(5, 1fr)} }
+    .logo{
+      display:flex; align-items:center; justify-content:center; gap:10px;
+      border:1px solid var(--line); border-radius:16px; padding:12px; background:rgba(255,255,255,.03);
+      min-height:76px;
+    }
+    .logo img{max-height:44px; max-width:100%; display:block}
+    .logo span{color:var(--muted); font-size:13px}
+    .footer{margin-top:26px; color:var(--muted); font-size:13px}
+    .small{font-size:12px}
+    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;}
   </style>
 </head>
 <body>
   <div class="wrap">
     <div class="nav">
-      <div class="pill">PMO • Transformation • GenAI in Project Delivery</div>
+      <div class="pill">PMO Director • GenAI & Digital Transformation PMO • Remote</div>
       <div class="pill">
-        <!-- EDIT these -->
-        <a href="mailto:adeel.ahmad@hotmail.com">Email</a> ·
+        <!-- EDIT if needed -->
+        <a href="mailto:adeel.ahmad@hotmail.com">adeel.ahmad@hotmail.com</a> ·
         <a href="https://www.linkedin.com/in/TheAdeel" target="_blank" rel="noreferrer">LinkedIn</a>
       </div>
     </div>
 
-    <div class="hero">
+    <div class="card">
       <h1>Adeel Ahmad</h1>
-      <div class="headline">
-        PMO Director and enterprise transformation leader delivering portfolio governance, Agile/Hybrid execution,
-        and GenAI-enabled reporting, forecasting, and risk insights—so executives can make faster, better decisions.
+      <div class="subhead">
+        <b>PMO Director | GenAI & Digital Transformation PMO</b><br/>
+        I build high-performing PMOs that turn strategy into predictable execution—using governance, Agile/Hybrid delivery,
+        and GenAI-enabled reporting, forecasting, and risk insights so executives can make faster, better decisions.
       </div>
 
       <div class="btnrow">
         <a class="btn primary" href="#impact">Selected Impact</a>
-        <a class="btn" href="#how">How I Create Value</a>
-        <a class="btn" href="#experience">Leadership Experience</a>
+        <a class="btn" href="#casestudies">Case Studies</a>
+        <a class="btn" href="#value">How I Create Value</a>
+        <a class="btn" href="#certs">Certifications</a>
         <a class="btn" href="Adeel-Ahmad-Resume.pdf" target="_blank" rel="noreferrer">Download Resume (PDF)</a>
       </div>
     </div>
 
-    <div class="grid">
+    <div class="grid section">
       <div class="card" id="impact">
         <h2>Selected Impact</h2>
         <ul>
-          <li><b>PMO governance + delivery performance:</b> Built governance, intake, and prioritization workflows improving delivery success by <b>25%</b> and operational efficiency by <b>15%</b>.</li>
-          <li><b>Risk reduction:</b> Strengthened KPI discipline and RAID execution to reduce project risk by <b>30%</b>.</li>
-          <li><b>Delivery acceleration:</b> Increased delivery speed by <b>20%</b> and improved resource allocation by <b>50%</b> through Agile adoption and forecasting improvements.</li>
-          <li><b>Growth enablement:</b> Supported digital transformation PMO outcomes contributing to digital sales growth from <b>$300M to $1B</b>.</li>
-          <li><b>Operational optimization:</b> Reduced onboarding/offboarding process cost by <b>35%</b> through process redesign and execution discipline.</li>
+          <li><b>Raised delivery performance:</b> built PMO governance, intake, and prioritization—improving delivery success by <b>25%</b> and operational efficiency by <b>15%</b>.</li>
+          <li><b>Reduced enterprise risk:</b> enforced KPI discipline + RAID routines to cut project risk by <b>30%</b>.</li>
+          <li><b>Accelerated execution:</b> increased delivery speed by <b>20%</b> and improved resource allocation by <b>50%</b> via Agile adoption + forecasting improvements.</li>
+          <li><b>Enabled growth outcomes:</b> supported digital transformation PMO execution contributing to digital sales growth from <b>$300M to $1B</b>.</li>
+          <li><b>Optimized operations:</b> redesigned onboarding/offboarding to reduce process cost by <b>35%</b>.</li>
         </ul>
 
         <div class="kpi">
-          <div class="box"><div class="num">22+ yrs</div><div class="lbl">Program/PMO leadership</div></div>
+          <div class="box"><div class="num">22+ years</div><div class="lbl">PMO & program leadership</div></div>
           <div class="box"><div class="num">GenAI</div><div class="lbl">Reporting • Forecasting • Risk insights</div></div>
         </div>
       </div>
 
-      <div class="card" id="how">
+      <div class="card" id="value">
         <h2>How I Create Value</h2>
         <ul>
-          <li><b>PMO & portfolio governance:</b> operating rhythms, intake, prioritization, KPI dashboards, steering forums.</li>
-          <li><b>Execution excellence:</b> Agile/Waterfall/Hybrid delivery, dependency management, decision facilitation.</li>
-          <li><b>Resource & financial clarity:</b> forecasting, capacity planning, benefits tracking, value realization.</li>
-          <li><b>GenAI-enabled PMO:</b> automated status reporting, schedule/variance analysis, risk pattern detection, executive summaries.</li>
-          <li><b>Stakeholder alignment:</b> translate strategy into roadmaps; drive clarity across business + tech.</li>
+          <li><b>PMO & portfolio governance:</b> operating rhythm, intake, prioritization, KPIs, steering cadences.</li>
+          <li><b>Execution systems:</b> Agile/Waterfall/Hybrid delivery, dependency mgmt, decision facilitation.</li>
+          <li><b>Resource & financial clarity:</b> capacity planning, forecasting, benefits/value realization.</li>
+          <li><b>GenAI-enabled PMO:</b> automated status narratives, schedule variance summaries, risk trend detection, exec-ready briefs.</li>
+          <li><b>Stakeholder alignment:</b> translate strategy into roadmaps, unblock cross-functional execution.</li>
         </ul>
+        <p class="muted small">Outcome focus: faster decisions, fewer surprises, improved predictability, and measurable business value.</p>
       </div>
     </div>
 
-    <div class="card section" id="experience">
-      <h2>Leadership Experience (high-level)</h2>
+    <div class="card section" id="casestudies">
+      <h2>Case Studies</h2>
+      <div class="tiles">
+        <div class="tile">
+          <div class="tag">PMO Build & Governance</div>
+          <h3>Portfolio intake + delivery governance overhaul</h3>
+          <p><b>What I led:</b> PMO operating model, prioritization, standard reporting, steering cadence, KPI discipline.</p>
+          <p><b>Outcome:</b> Delivery success <b>+25%</b>, operational efficiency <b>+15%</b>.</p>
+        </div>
 
-      <div class="role">
-        <b>PMO Director / Senior Program Leader</b>
-        <span>Public sector • healthcare • consulting • enterprise environments</span>
-      </div>
-      <ul>
-        <li>Built PMO structures, governance, and execution systems to improve predictability and delivery outcomes.</li>
-        <li>Led cross-functional transformations across product, engineering, operations, and vendor ecosystems.</li>
-        <li>Implemented reporting and decision frameworks executives can trust.</li>
-      </ul>
+        <div class="tile">
+          <div class="tag">Risk & Predictability</div>
+          <h3>KPI + RAID execution to reduce enterprise delivery risk</h3>
+          <p><b>What I led:</b> metrics framework, risk controls, escalations, executive visibility across initiatives.</p>
+          <p><b>Outcome:</b> Project risk reduced by <b>30%</b> with clearer decisions and fewer surprises.</p>
+        </div>
 
-      <div class="role" style="margin-top:12px">
-        <b>GenAI in Project & Portfolio Management</b>
-        <span>Applied automation to improve speed + quality of decisions</span>
+        <div class="tile">
+          <div class="tag">GenAI + Transformation PMO</div>
+          <h3>GenAI-enabled reporting and forecasting for faster decisions</h3>
+          <p><b>What I led:</b> automation of status narratives, forecast summaries, and risk insights for stakeholders.</p>
+          <p><b>Outcome:</b> Faster cycle time, clearer exec communication, improved resource allocation (<b>+50%</b>).</p>
+        </div>
       </div>
-      <ul>
-        <li>Automated weekly/monthly reporting and narrative generation for faster stakeholder alignment.</li>
-        <li>Enhanced forecasting and risk identification using structured data + AI summaries.</li>
-      </ul>
+      <p class="muted small" style="margin-top:12px">
+        Want this even stronger? We can swap these into real “mini case studies” with 3 lines each: <span class="mono">Context → Actions → Results</span>.
+      </p>
     </div>
 
     <div class="grid section">
-      <div class="card">
-        <h2>Credentials</h2>
-        <div class="muted">PMP, PMI-ACP, CSM, ITIL, Prince2 • Certified Generative AI in Project Management</div>
+      <div class="card" id="certs">
+        <h2>Certifications (with logos)</h2>
+        <p class="muted small">Add your official badge image + verification link for each cert below (instructions under this section).</p>
+
+        <div class="logoGrid">
+          <!-- Replace each href + img src with your real badge verification link + image -->
+          <a class="logo" href="#" target="_blank" rel="noreferrer" title="PMP">
+            <img src="YOUR_PMP_BADGE_IMAGE_URL" alt="PMP badge"/>
+          </a>
+
+          <a class="logo" href="#" target="_blank" rel="noreferrer" title="PMI-ACP">
+            <img src="YOUR_PMI_ACP_BADGE_IMAGE_URL" alt="PMI-ACP badge"/>
+          </a>
+
+          <a class="logo" href="#" target="_blank" rel="noreferrer" title="CSM">
+            <img src="YOUR_CSM_BADGE_IMAGE_URL" alt="CSM badge"/>
+          </a>
+
+          <a class="logo" href="#" target="_blank" rel="noreferrer" title="ITIL">
+            <img src="YOUR_ITIL_BADGE_IMAGE_URL" alt="ITIL badge"/>
+          </a>
+
+          <div class="logo" title="PRINCE2">
+            <span>PRINCE2</span>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:12px; background:rgba(255,255,255,.02)">
+          <div class="muted small">
+            <b>Badge setup:</b> once you paste your badge URLs above, the logo grid becomes a strong “credibility bar.”
+            Each logo can link to your public verification page.
+          </div>
+        </div>
       </div>
+
       <div class="card">
         <h2>Tools</h2>
         <div class="muted">Jira, Confluence, MS Project, Power BI, ServiceNow, SharePoint, Smartsheet, Rally, Trello, Asana, Monday.com</div>
+
+        <div style="margin-top:12px">
+          <h2>Leadership Snapshot</h2>
+          <div class="muted">
+            Remote • Enterprise PMO • Digital transformation • Executive reporting • Governance • Agile/Hybrid delivery • GenAI enablement
+          </div>
+        </div>
       </div>
     </div>
 
     <div class="footer">
-      Tip: Keep this page to <b>one screen of impact</b> + <b>one screen of credibility</b>. Your resume is supporting material.
+      Your link: <a href="https://adeelsportfolio.github.io/" target="_blank" rel="noreferrer">adeelsportfolio.github.io</a> —
+      keep this page crisp: impact first, proof second, resume last.
     </div>
   </div>
 </body>
