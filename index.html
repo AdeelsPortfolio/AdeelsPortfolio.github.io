@@ -52,7 +52,27 @@
     .kpi .box{border:1px solid var(--line); border-radius:14px; padding:12px}
     .kpi .num{font-size:22px; font-weight:800}
     .kpi .lbl{color:var(--muted); font-size:13px; margin-top:2px}
-    .tiles{display:grid; grid-template-columns:1fr; gap:12px; margin-top:10px}
+/* === Case Studies grid (horizontal on screen) === */
+.tiles{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:16px;
+  margin-top:12px;
+}
+
+/* Tablet */
+@media (max-width: 1100px){
+  .tiles{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px){
+  .tiles{
+    grid-template-columns: 1fr;
+  }
+}
     @media(min-width:900px){ .tiles{grid-template-columns:1fr 1fr 1fr} }
     .tile{border:1px solid var(--line); border-radius:16px; padding:14px; background:rgba(255,255,255,.03)}
     .tag{display:inline-block; font-size:12px; color:var(--good); border:1px solid rgba(121,255,210,.25);
