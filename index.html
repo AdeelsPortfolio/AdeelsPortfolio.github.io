@@ -116,66 +116,62 @@
     .small{font-size:12px}
     .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;}
 
-/* THEME PREVIEW START: Theme 1 - Executive Glass + Accent Line */
+/* THEME PREVIEW START: Theme 1 - Executive Glass + Accent Line (strong) */
 :root{
-  --accent:#8ab4ff;
-  --cardGlow: rgba(138,180,255,.10);
+  --accent:#8ab4ff !important;
 }
 
 .card{
-  background: linear-gradient(180deg, rgba(255,255,255,.075), rgba(255,255,255,.03));
-  border: 1px solid rgba(255,255,255,.12);
-  box-shadow: 0 14px 40px rgba(0,0,0,.30);
-  backdrop-filter: blur(10px);
+  background: linear-gradient(180deg, rgba(255,255,255,.09), rgba(255,255,255,.03)) !important;
+  border: 1px solid rgba(255,255,255,.16) !important;
+  box-shadow: 0 18px 50px rgba(0,0,0,.35) !important;
+  backdrop-filter: blur(10px) !important;
 }
 
 h2{
-  position: relative;
-  padding-left: 12px;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-  font-size: 13px;
-  margin-bottom: 12px;
+  position: relative !important;
+  padding-left: 12px !important;
+  letter-spacing: .10em !important;
+  text-transform: uppercase !important;
+  font-size: 13px !important;
+  margin-bottom: 12px !important;
 }
 
 h2::before{
-  content:"";
-  position:absolute;
-  left:0; top:2px;
-  width:3px; height:16px;
-  border-radius: 8px;
-  background: linear-gradient(180deg, var(--accent), rgba(121,255,210,.55));
-  box-shadow: 0 0 18px var(--cardGlow);
+  content:"" !important;
+  position:absolute !important;
+  left:0 !important; top:2px !important;
+  width:3px !important; height:16px !important;
+  border-radius: 8px !important;
+  background: linear-gradient(180deg, var(--accent), rgba(121,255,210,.55)) !important;
 }
 
 .btn{
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,.14);
-  background: rgba(255,255,255,.035);
+  border-radius: 999px !important;
+  border: 1px solid rgba(255,255,255,.18) !important;
+  background: rgba(255,255,255,.035) !important;
 }
 
 .btn.primary{
-  border-color: rgba(138,180,255,.55);
-  background: rgba(138,180,255,.14);
+  border-color: rgba(138,180,255,.60) !important;
+  background: rgba(138,180,255,.16) !important;
 }
 
 .tile{
-  transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+  transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease !important;
 }
 .tile:hover{
-  transform: translateY(-2px);
-  border-color: rgba(138,180,255,.28);
-  box-shadow: 0 12px 28px rgba(0,0,0,.28);
+  transform: translateY(-2px) !important;
+  border-color: rgba(138,180,255,.30) !important;
+  box-shadow: 0 18px 36px rgba(0,0,0,.30) !important;
 }
 
 .logo{
-  border-color: rgba(255,255,255,.14);
-  background: rgba(255,255,255,.03);
-}
-.logo:hover{
-  border-color: rgba(138,180,255,.30);
+  border-color: rgba(255,255,255,.16) !important;
+  background: rgba(255,255,255,.03) !important;
 }
 /* THEME PREVIEW END */
+
 
     
   </style>
