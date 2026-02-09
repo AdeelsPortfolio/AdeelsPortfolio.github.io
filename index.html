@@ -221,6 +221,48 @@ h2::before{
   color: var(--muted);
   font-size: 13px;
 }
+/* === Print-friendly mode (toggle) === */
+.print-mode{
+  background: #ffffff !important;
+  color: #111827 !important;
+}
+
+.print-mode body{
+  background: #ffffff !important;
+  color: #111827 !important;
+}
+
+.print-mode .wrap{
+  max-width: 900px !important;
+  padding: 28px 18px 40px !important;
+}
+
+.print-mode .card,
+.print-mode .tile,
+.print-mode .logo{
+  background: #ffffff !important;
+  color: #111827 !important;
+  border: 1px solid #e5e7eb !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
+
+.print-mode a{ color: #111827 !important; text-decoration: underline; }
+.print-mode .muted{ color:#4b5563 !important; }
+.print-mode .pill{ background:#fff !important; color:#4b5563 !important; border-color:#e5e7eb !important; }
+.print-mode .btnrow, .print-mode .btn{ display:none !important; }  /* hide buttons */
+.print-mode .tag{
+  color:#111827 !important;
+  border-color:#e5e7eb !important;
+  background:#f9fafb !important;
+}
+
+/* Keep sections from breaking awkwardly when printing */
+@media print{
+  .btnrow, .btn, #printToggleBtn { display:none !important; }
+  .card, .tile, .logo { break-inside: avoid; page-break-inside: avoid; }
+  body{ background:#fff !important; color:#111827 !important; }
+}
 
     
   </style>
@@ -243,6 +285,15 @@ h2::before{
         I build PMOs that make execution predictable—combining governance, Agile/Hybrid delivery, and GenAI-enabled reporting,
         forecasting, and risk insights so leaders make faster decisions with fewer surprises.
       </div>
+<div class="muted small" style="margin-top:10px">
+  <b>PMO Director Philosophy:</b> Build simple governance, make decisions visible, and run the portfolio on trusted data—so delivery becomes predictable and outcomes repeatable.
+</div>
+<button class="btn" type="button" onclick="togglePrintMode()" aria-pressed="false" id="printToggleBtn">
+  Print-friendly view
+</button>
+<button class="btn" type="button" onclick="window.print()">
+  Print / Save PDF
+</button>
 
       <div class="btnrow">
         <a class="btn primary" href="#impact">Selected Impact</a>
@@ -257,12 +308,13 @@ h2::before{
       <div class="card" id="impact">
         <h2>Selected Impact</h2>
         <ul>
-          <li><b>PMO governance that drives outcomes:</b> built portfolio intake, prioritization, and executive operating rhythms—improving delivery success by <b>25%</b> and operational efficiency by <b>15%</b>.</li>
-          <li><b>Predictability + risk control:</b> implemented KPI discipline and RAID routines to reduce project risk by <b>30%</b> and improve decision velocity.</li>
-          <li><b>Faster delivery:</b> increased execution speed by <b>20%</b> while improving resource allocation by <b>50%</b> through Agile adoption and capacity/forecasting improvements.</li>
-          <li><b>Transformation enablement:</b> supported digital transformation PMO execution contributing to digital sales growth from <b>$300M → $1B</b>.</li>
-          <li><b>Operational efficiency:</b> redesigned onboarding/offboarding processes to reduce cost by <b>35%</b>.</li>
-        </ul>
+  <li><b>Portfolio governance & controls:</b> established PMO operating rhythms, intake/prioritization, and KPI reporting—improving delivery success by <b>25%</b> and operational efficiency by <b>15%</b>.</li>
+  <li><b>Predictability & risk reduction:</b> strengthened KPI discipline, RAID governance, and escalation paths—reducing project risk by <b>30%</b> and increasing forecast confidence.</li>
+  <li><b>Execution acceleration:</b> scaled Agile/Hybrid delivery and capacity planning—raising delivery speed by <b>20%</b> and improving resource allocation by <b>50%</b>.</li>
+  <li><b>Transformation PMO enablement:</b> improved executive visibility and decision velocity across digital transformation—supporting growth from <b>$300M → $1B</b> in digital sales.</li>
+  <li><b>Operational efficiency:</b> redesigned onboarding/offboarding processes—reducing cost by <b>35%</b> through standardization and execution discipline.</li>
+</ul>
+
 
 
         <div class="kpi">
@@ -438,5 +490,16 @@ h2::before{
 
     
   </div>
+<script>
+  function togglePrintMode(){
+    const html = document.documentElement;
+    const btn = document.getElementById('printToggleBtn');
+    const isOn = html.classList.toggle('print-mode');
+    if (btn) btn.setAttribute('aria-pressed', String(isOn));
+  }
+</script>
+
+
+        
 </body>
 </html>
