@@ -172,6 +172,55 @@ h2::before{
 }
 /* THEME PREVIEW END */
 
+/* === Case study micro-formatting === */
+.csScale{
+  display:inline-block;
+  margin: 2px 0 10px;
+  padding: 4px 10px;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 999px;
+  font-size: 12px;
+  color: var(--muted);
+  background: rgba(255,255,255,.03);
+}
+
+.csLine{
+  display:flex;
+  gap:10px;
+  align-items:flex-start;
+  margin-top:10px;
+}
+
+.csIcon{
+  width:26px;
+  height:26px;
+  border-radius: 10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.03);
+  flex: 0 0 26px;
+  font-size: 14px;
+}
+
+.csText{
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.csText b{
+  color: var(--text);
+}
+
+.csWhy{
+  margin-top:8px;
+  padding-top:10px;
+  border-top: 1px solid rgba(255,255,255,.10);
+  color: var(--muted);
+  font-size: 13px;
+}
 
     
   </style>
@@ -237,30 +286,78 @@ h2::before{
 
     <div class="card section" id="casestudies">
       <h2>Case Studies</h2>
+
       <div class="tiles">
 
   <div class="tile">
     <div class="tag">State of New Jersey • PMO Governance</div>
     <h3>Enterprise PMO operating model for predictable delivery</h3>
-    <p><b>Context:</b> Large, multi-initiative portfolio lacked consistent governance, prioritization, and executive-level visibility.</p>
-    <p><b>Actions:</b> Designed PMO operating model, intake and prioritization framework, KPI dashboards, and steering cadences.</p>
-    <p><b>Results:</b> Delivery success increased <b>25%</b>, operational efficiency improved <b>15%</b>, and decision cycles shortened.</p>
+    <div class="csScale">Portfolio scale: $XXM • XX initiatives • X agencies</div>
+
+    <div class="csLine">
+      <div class="csIcon" aria-hidden="true">🎯</div>
+      <p class="csText"><b>Context:</b> Large, multi-initiative portfolio lacked consistent governance, prioritization, and executive-level visibility.</p>
+    </div>
+
+    <div class="csLine">
+      <div class="csIcon" aria-hidden="true">🧭</div>
+      <p class="csText"><b>Actions:</b> Designed PMO operating model, intake/prioritization, KPI dashboards, and steering cadences to standardize execution.</p>
+    </div>
+
+    <div class="csLine">
+      <div class="csIcon" aria-hidden="true">📈</div>
+      <p class="csText"><b>Results:</b> Delivery success <b>+25%</b>, operational efficiency <b>+15%</b>, and shorter decision cycles through clearer escalation paths.</p>
+    </div>
+
+    <div class="csWhy"><b>Why it mattered:</b> Leadership gained reliable visibility and control—turning delivery into a repeatable system instead of a one-off effort.</div>
   </div>
+
 
   <div class="tile">
     <div class="tag">Deloitte • Risk & Predictability</div>
     <h3>KPI-driven controls to reduce delivery risk</h3>
-    <p><b>Context:</b> Complex consulting programs faced elevated delivery risk and inconsistent executive decision-making.</p>
-    <p><b>Actions:</b> Implemented KPI discipline, RAID governance, dependency tracking, and exec-ready status narratives.</p>
-    <p><b>Results:</b> Project risk reduced by <b>30%</b>, with clearer escalation paths and higher stakeholder confidence.</p>
+    <div class="csScale">Portfolio scale: $XXM • XX workstreams • X vendors</div>
+
+    <div class="csLine">
+      <div class="csIcon" aria-hidden="true">🎯</div>
+      <p class="csText"><b>Context:</b> Complex consulting programs faced elevated delivery risk, dependencies, and inconsistent executive decision-making.</p>
+    </div>
+
+    <div class="csLine">
+      <div class="csIcon" aria-hidden="true">🧭</div>
+      <p class="csText"><b>Actions:</b> Implemented KPI discipline, RAID governance, dependency tracking, and executive-ready status narratives for faster decisions.</p>
+    </div>
+
+    <div class="csLine">
+      <div class="csIcon" aria-hidden="true">📈</div>
+      <p class="csText"><b>Results:</b> Project risk reduced by <b>30%</b> with clearer escalation paths, stronger predictability, and higher stakeholder confidence.</p>
+    </div>
+
+    <div class="csWhy"><b>Why it mattered:</b> Reduced risk translated into fewer surprises, smoother governance, and greater trust in delivery forecasts and timelines.</div>
   </div>
+
 
   <div class="tile">
     <div class="tag">Hackensack Meridian Health • GenAI PMO</div>
     <h3>GenAI-enabled reporting and forecasting</h3>
-    <p><b>Context:</b> Manual reporting slowed decision-making across a fast-moving healthcare transformation portfolio.</p>
-    <p><b>Actions:</b> Applied GenAI to automate status narratives, forecasting summaries, and risk insights for leadership.</p>
-    <p><b>Results:</b> Delivery speed increased <b>20%</b>, resource allocation improved <b>50%</b>, and exec updates became faster and clearer.</p>
+    <div class="csScale">Portfolio scale: $XXM • XX programs • X clinical/IT teams</div>
+
+    <div class="csLine">
+      <div class="csIcon" aria-hidden="true">🎯</div>
+      <p class="csText"><b>Context:</b> Manual reporting slowed decision-making across a fast-moving healthcare transformation portfolio.</p>
+    </div>
+
+    <div class="csLine">
+      <div class="csIcon" aria-hidden="true">🧭</div>
+      <p class="csText"><b>Actions:</b> Applied GenAI to automate status narratives, forecasting summaries, and risk insights—reducing reporting friction for leaders.</p>
+    </div>
+
+    <div class="csLine">
+      <div class="csIcon" aria-hidden="true">📈</div>
+      <p class="csText"><b>Results:</b> Delivery speed <b>+20%</b>, resource allocation <b>+50%</b>, and faster, clearer executive updates that improved decision velocity.</p>
+    </div>
+
+    <div class="csWhy"><b>Why it mattered:</b> Leaders could spend less time interpreting reports and more time making decisions that moved patient and business outcomes forward.</div>
   </div>
 
 </div>
