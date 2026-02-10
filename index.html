@@ -1,319 +1,396 @@
 <!doctype html>
 <html lang="en">
-<head> 
+<head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Adeel Ahmad | PMO Director • GenAI & Digital Transformation</title>
   <meta name="description" content="PMO Director building portfolio governance, agile/hybrid execution, and GenAI-enabled reporting, forecasting, and risk insights for faster, better decisions." />
+
   <style>
     :root{
-      --bg:#0b0f19; --card:#121a2b; --text:#e9eefc; --muted:#a9b4d0;
-      --line:rgba(255,255,255,.10); --accent:#7aa7ff; --good:#79ffd2;
+      --bg:#0b0f19;
+      --text:#e9eefc;
+      --muted:#a9b4d0;
+      --line:rgba(255,255,255,.10);
+      --accent:#8ab4ff;          /* Executive accent */
+      --good:#79ffd2;            /* subtle secondary */
     }
+
     *{box-sizing:border-box}
+    html, body{height:100%}
     body{
       margin:0;
       background:
-        radial-gradient(1200px 600px at 20% -10%, rgba(122,167,255,.18), transparent 60%),
+        radial-gradient(1200px 600px at 20% -10%, rgba(138,180,255,.18), transparent 60%),
         radial-gradient(900px 500px at 90% 10%, rgba(121,255,210,.10), transparent 60%),
         var(--bg);
       color:var(--text);
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       line-height:1.55;
     }
+
     a{color:var(--accent); text-decoration:none}
     a:hover{text-decoration:underline}
+
     .wrap{max-width:1040px; margin:0 auto; padding:44px 18px 70px}
-    .nav{display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:22px; flex-wrap:wrap}
-    .pill{border:1px solid var(--line); padding:8px 12px; border-radius:999px; color:var(--muted); font-size:14px}
-    h1{margin:0; font-size:42px; letter-spacing:-.02em}
-    .subhead{margin-top:10px; color:var(--muted); font-size:18px; max-width:860px}
-    .btnrow{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px}
-    .btn{
-      display:inline-block; padding:10px 14px; border-radius:12px;
-      border:1px solid var(--line); background:rgba(255,255,255,.04);
-      color:var(--text);
+
+    .nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      margin-bottom:22px;
+      flex-wrap:wrap;
     }
-    .btn.primary{border-color:rgba(122,167,255,.55); background:rgba(122,167,255,.12)}
-    .grid{display:grid; grid-template-columns:1fr; gap:14px; margin-top:18px}
-    @media(min-width:900px){ .grid{grid-template-columns:1.2fr .8fr} }
+
+    .pill{
+      border:1px solid rgba(255,255,255,.14);
+      padding:8px 12px;
+      border-radius:999px;
+      color:var(--muted);
+      font-size:14px;
+      background: rgba(255,255,255,.03);
+      backdrop-filter: blur(8px);
+    }
+
     .card{
-      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
-      border:1px solid var(--line); border-radius:16px; padding:16px 16px;
-      box-shadow: 0 12px 30px rgba(0,0,0,.25);
+      background: linear-gradient(180deg, rgba(255,255,255,.09), rgba(255,255,255,.03));
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 18px;
+      padding: 18px 18px;
+      box-shadow: 0 18px 50px rgba(0,0,0,.35);
+      backdrop-filter: blur(10px);
     }
-    h2{margin:0 0 10px; font-size:18px}
+
+    .grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:14px;
+      margin-top:16px;
+    }
+    @media(min-width:900px){
+      .grid{grid-template-columns:1.2fr .8fr}
+    }
+
+    h1{
+      margin:0;
+      font-size:42px;
+      letter-spacing:-.02em;
+    }
+
+    .subhead{
+      margin-top:10px;
+      color:var(--muted);
+      font-size:18px;
+      max-width:860px;
+    }
+
+    .btnrow{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:14px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.18);
+      background:rgba(255,255,255,.035);
+      color:var(--text);
+      cursor:pointer;
+      font: inherit;
+    }
+    .btn:hover{
+      text-decoration:none;
+      border-color: rgba(138,180,255,.35);
+      background: rgba(138,180,255,.08);
+    }
+    .btn.primary{
+      border-color: rgba(138,180,255,.60);
+      background: rgba(138,180,255,.16);
+    }
+
+    h2{
+      margin:0 0 10px;
+      font-size:13px;
+      letter-spacing:.10em;
+      text-transform:uppercase;
+      position: relative;
+      padding-left: 12px;
+    }
+    h2::before{
+      content:"";
+      position:absolute;
+      left:0;
+      top:2px;
+      width:3px;
+      height:16px;
+      border-radius: 8px;
+      background: linear-gradient(180deg, var(--accent), rgba(121,255,210,.55));
+    }
+
     p{margin:10px 0 0}
     ul{margin:8px 0 0 18px; padding:0}
     li{margin:8px 0}
     .muted{color:var(--muted)}
+    .small{font-size:12px}
     .section{margin-top:16px}
-    .kpi{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:10px}
-    .kpi .box{border:1px solid var(--line); border-radius:14px; padding:12px}
+
+    .kpi{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:10px;
+      margin-top:10px;
+    }
+    .kpi .box{
+      border:1px solid rgba(255,255,255,.14);
+      border-radius:14px;
+      padding:12px;
+      background: rgba(255,255,255,.02);
+    }
     .kpi .num{font-size:22px; font-weight:800}
     .kpi .lbl{color:var(--muted); font-size:13px; margin-top:2px}
-/* === Case Studies grid (horizontal on screen) === */
-.tiles{
-  display:grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap:16px;
-  margin-top:12px;
-}
 
-/* Tablet */
-@media (max-width: 1100px){
-  .tiles{
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
+    /* === Case Studies grid (horizontal on screen) === */
+    .tiles{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:16px;
+      margin-top:12px;
+    }
+    @media (max-width: 1100px){
+      .tiles{ grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px){
+      .tiles{ grid-template-columns: 1fr; }
+    }
 
-/* Mobile */
-@media (max-width: 640px){
-  .tiles{
-    grid-template-columns: 1fr;
-  }
-}
-    @media(min-width:900px){ .tiles{grid-template-columns:1fr 1fr 1fr} }
-    .tile{border:1px solid var(--line); border-radius:16px; padding:14px; background:rgba(255,255,255,.03)}
-    .tag{display:inline-block; font-size:12px; color:var(--good); border:1px solid rgba(121,255,210,.25);
-      padding:4px 9px; border-radius:999px; margin-bottom:10px}
+    .tile{
+      border:1px solid rgba(255,255,255,.14);
+      border-radius:18px;
+      padding:16px;
+      background: rgba(255,255,255,.03);
+      transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+    }
+    .tile:hover{
+      transform: translateY(-2px);
+      border-color: rgba(138,180,255,.30);
+      box-shadow: 0 18px 36px rgba(0,0,0,.30);
+    }
+
+    .tag{
+      display:inline-block;
+      font-size:12px;
+      color: rgba(233,238,252,.92);
+      border:1px solid rgba(138,180,255,.22);
+      padding:4px 9px;
+      border-radius:999px;
+      margin-bottom:10px;
+      background: rgba(138,180,255,.08);
+    }
     .tile h3{margin:0 0 6px; font-size:15px}
     .tile p{margin:8px 0 0; color:var(--muted); font-size:14px}
-    .role{display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap}
-    .role b{font-size:15px}
-    .role span{color:var(--muted); font-size:13px}
+    .tile p b{color:var(--text)}
 
-    /* === Certification Grid (3 per row, larger logos) === */
-.logoGrid{
-  display:grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap:20px;
-  margin-top:14px;
-}
+    /* === Case study micro-formatting === */
+    .csScale{
+      display:inline-block;
+      margin: 2px 0 10px;
+      padding: 4px 10px;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 999px;
+      font-size: 12px;
+      color: var(--muted);
+      background: rgba(255,255,255,.03);
+    }
+    .csLine{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      margin-top:10px;
+    }
+    .csIcon{
+      width:26px;
+      height:26px;
+      border-radius: 10px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.03);
+      flex: 0 0 26px;
+      font-size: 14px;
+    }
+    .csText{
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .csText b{ color: var(--text); }
+    .csWhy{
+      margin-top:8px;
+      padding-top:10px;
+      border-top: 1px solid rgba(255,255,255,.10);
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .csWhy b{ color: var(--text); }
 
-@media(max-width:900px){
-  .logoGrid{
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
+    /* === Certifications grid (3 per row, larger logos) === */
+    .logoGrid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:20px;
+      margin-top:14px;
+    }
+    @media(max-width:900px){
+      .logoGrid{ grid-template-columns: repeat(2, 1fr); }
+    }
+    @media(max-width:520px){
+      .logoGrid{ grid-template-columns: 1fr; }
+    }
+    .logo{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:flex-start;
+      gap:10px;
+      border:1px solid rgba(255,255,255,.16);
+      border-radius:18px;
+      padding:18px 14px;
+      background:rgba(255,255,255,.03);
+      min-height:170px;
+      text-align:center;
+      transition: transform .16s ease, border-color .16s ease, box-shadow .16s ease;
+    }
+    .logo:hover{
+      transform: translateY(-1px);
+      border-color: rgba(138,180,255,.30);
+      box-shadow: 0 14px 28px rgba(0,0,0,.22);
+    }
+    .logoTitle{
+      font-size:14px;
+      font-weight:600;
+      letter-spacing:.03em;
+      color:var(--text);
+    }
+    .logo img{
+      max-height:62px;   /* ~40% larger */
+      max-width:100%;
+      display:block;
+    }
 
-@media(max-width:520px){
-  .logoGrid{
-    grid-template-columns: 1fr;
-  }
-}
+    /* === Scroll-in animations (no libraries) === */
+    .reveal{
+      opacity:0;
+      transform: translateY(14px);
+      transition: opacity 700ms ease, transform 700ms ease;
+      will-change: opacity, transform;
+    }
+    .reveal.is-visible{
+      opacity:1;
+      transform: translateY(0);
+    }
+    .logoGrid .logo.reveal,
+    .tiles .tile.reveal{
+      transition-delay: var(--delay, 0ms);
+    }
+    @media (prefers-reduced-motion: reduce){
+      .reveal, .reveal.is-visible{
+        opacity:1 !important;
+        transform:none !important;
+        transition:none !important;
+      }
+    }
 
-.logo{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:flex-start;
-  gap:10px;
-  border:1px solid var(--line);
-  border-radius:18px;
-  padding:18px 14px;
-  background:rgba(255,255,255,.035);
-  min-height:170px;
-  text-align:center;
-}
+    /* === Print-friendly mode (toggle) === */
+    .print-mode{
+      background: #ffffff !important;
+      color: #111827 !important;
+    }
+    .print-mode body{
+      background: #ffffff !important;
+      color: #111827 !important;
+    }
+    .print-mode .wrap{
+      max-width: 900px !important;
+      padding: 28px 18px 40px !important;
+    }
+    .print-mode .card,
+    .print-mode .tile,
+    .print-mode .logo{
+      background: #ffffff !important;
+      color: #111827 !important;
+      border: 1px solid #e5e7eb !important;
+      box-shadow: none !important;
+      backdrop-filter: none !important;
+    }
+    .print-mode a{ color: #111827 !important; text-decoration: underline; }
+    .print-mode .muted{ color:#4b5563 !important; }
+    .print-mode .pill{
+      background:#fff !important;
+      color:#4b5563 !important;
+      border-color:#e5e7eb !important;
+      backdrop-filter:none !important;
+    }
+    .print-mode .btnrow, .print-mode .btn{ display:none !important; }
+    .print-mode .tag{
+      color:#111827 !important;
+      border-color:#e5e7eb !important;
+      background:#f9fafb !important;
+    }
+    .print-mode h2{
+      color:#111827 !important;
+    }
+    .print-mode h2::before{
+      background:#111827 !important;
+    }
+    .print-mode .csScale{
+      border-color:#e5e7eb !important;
+      background:#f9fafb !important;
+      color:#374151 !important;
+    }
+    .print-mode .csIcon{
+      border-color:#e5e7eb !important;
+      background:#f9fafb !important;
+    }
+    .print-mode .csWhy{
+      border-top-color:#e5e7eb !important;
+      color:#374151 !important;
+    }
 
-.logoTitle{
-  font-size:14px;
-  font-weight:600;
-  letter-spacing:.03em;
-  color:var(--text);
-}
-
-.logo img{
-  max-height:62px;   /* ~40% larger */
-  max-width:100%;
-  display:block;
-}
-
-    
-    .logo span{color:var(--muted); font-size:13px}
-    .footer{margin-top:26px; color:var(--muted); font-size:13px}
-    .small{font-size:12px}
-    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;}
-
-/* THEME PREVIEW START: Theme 1 - Executive Glass + Accent Line (strong) */
-:root{
-  --accent:#8ab4ff !important;
-}
-
-.card{
-  background: linear-gradient(180deg, rgba(255,255,255,.09), rgba(255,255,255,.03)) !important;
-  border: 1px solid rgba(255,255,255,.16) !important;
-  box-shadow: 0 18px 50px rgba(0,0,0,.35) !important;
-  backdrop-filter: blur(10px) !important;
-}
-
-h2{
-  position: relative !important;
-  padding-left: 12px !important;
-  letter-spacing: .10em !important;
-  text-transform: uppercase !important;
-  font-size: 13px !important;
-  margin-bottom: 12px !important;
-}
-
-h2::before{
-  content:"" !important;
-  position:absolute !important;
-  left:0 !important; top:2px !important;
-  width:3px !important; height:16px !important;
-  border-radius: 8px !important;
-  background: linear-gradient(180deg, var(--accent), rgba(121,255,210,.55)) !important;
-}
-
-.btn{
-  border-radius: 999px !important;
-  border: 1px solid rgba(255,255,255,.18) !important;
-  background: rgba(255,255,255,.035) !important;
-}
-
-.btn.primary{
-  border-color: rgba(138,180,255,.60) !important;
-  background: rgba(138,180,255,.16) !important;
-}
-
-.tile{
-  transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease !important;
-}
-.tile:hover{
-  transform: translateY(-2px) !important;
-  border-color: rgba(138,180,255,.30) !important;
-  box-shadow: 0 18px 36px rgba(0,0,0,.30) !important;
-}
-
-.logo{
-  border-color: rgba(255,255,255,.16) !important;
-  background: rgba(255,255,255,.03) !important;
-}
-/* THEME PREVIEW END */
-
-/* === Case study micro-formatting === */
-.csScale{
-  display:inline-block;
-  margin: 2px 0 10px;
-  padding: 4px 10px;
-  border: 1px solid rgba(255,255,255,.12);
-  border-radius: 999px;
-  font-size: 12px;
-  color: var(--muted);
-  background: rgba(255,255,255,.03);
-}
-
-.csLine{
-  display:flex;
-  gap:10px;
-  align-items:flex-start;
-  margin-top:10px;
-}
-
-.csIcon{
-  width:26px;
-  height:26px;
-  border-radius: 10px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border: 1px solid rgba(255,255,255,.12);
-  background: rgba(255,255,255,.03);
-  flex: 0 0 26px;
-  font-size: 14px;
-}
-
-.csText{
-  margin: 0;
-  color: var(--muted);
-  font-size: 14px;
-}
-
-.csText b{
-  color: var(--text);
-}
-
-.csWhy{
-  margin-top:8px;
-  padding-top:10px;
-  border-top: 1px solid rgba(255,255,255,.10);
-  color: var(--muted);
-  font-size: 13px;
-}
-/* === Print-friendly mode (toggle) === */
-.print-mode{
-  background: #ffffff !important;
-  color: #111827 !important;
-}
-
-.print-mode body{
-  background: #ffffff !important;
-  color: #111827 !important;
-}
-
-.print-mode .wrap{
-  max-width: 900px !important;
-  padding: 28px 18px 40px !important;
-}
-
-.print-mode .card,
-.print-mode .tile,
-.print-mode .logo{
-  background: #ffffff !important;
-  color: #111827 !important;
-  border: 1px solid #e5e7eb !important;
-  box-shadow: none !important;
-  backdrop-filter: none !important;
-}
-
-.print-mode a{ color: #111827 !important; text-decoration: underline; }
-.print-mode .muted{ color:#4b5563 !important; }
-.print-mode .pill{ background:#fff !important; color:#4b5563 !important; border-color:#e5e7eb !important; }
-.print-mode .btnrow, .print-mode .btn{ display:none !important; }  /* hide buttons */
-.print-mode .tag{
-  color:#111827 !important;
-  border-color:#e5e7eb !important;
-  background:#f9fafb !important;
-}
-
-/* Keep sections from breaking awkwardly when printing */
-@media print{
-  .btnrow, .btn, #printToggleBtn { display:none !important; }
-  .card, .tile, .logo { break-inside: avoid; page-break-inside: avoid; }
-  body{ background:#fff !important; color:#111827 !important; }
-}
-
-    
+    @media print{
+      .btnrow, .btn, #printToggleBtn { display:none !important; }
+      .card, .tile, .logo { break-inside: avoid; page-break-inside: avoid; }
+      body{ background:#fff !important; color:#111827 !important; }
+      .tiles{ grid-template-columns: 1fr; }
+      .logoGrid{ grid-template-columns: repeat(3, 1fr); }
+    }
   </style>
 </head>
+
 <body>
   <div class="wrap">
     <div class="nav">
       <div class="pill">PMO Director • GenAI & Digital Transformation PMO • Remote</div>
       <div class="pill">
-        <!-- EDIT if needed -->
         <a href="mailto:adeel.ahmad@hotmail.com">adeel.ahmad@hotmail.com</a> ·
         <a href="https://www.linkedin.com/in/TheAdeel" target="_blank" rel="noreferrer">LinkedIn</a>
       </div>
     </div>
 
-    <div class="card">
+    <div class="card reveal">
       <h1>Adeel Ahmad</h1>
       <div class="subhead">
         <b>PMO Director | GenAI & Digital Transformation PMO (Remote)</b><br/>
         I build PMOs that make execution predictable—combining governance, Agile/Hybrid delivery, and GenAI-enabled reporting,
         forecasting, and risk insights so leaders make faster decisions with fewer surprises.
+        <div class="muted small" style="margin-top:10px">
+          <b>PMO Director Philosophy:</b> Build simple governance, make decisions visible, and run the portfolio on trusted data—so delivery becomes predictable and outcomes repeatable.
+        </div>
       </div>
-<div class="muted small" style="margin-top:10px">
-  <b>PMO Director Philosophy:</b> Build simple governance, make decisions visible, and run the portfolio on trusted data—so delivery becomes predictable and outcomes repeatable.
-</div>
-<button class="btn" type="button" onclick="togglePrintMode()" aria-pressed="false" id="printToggleBtn">
-  Print-friendly view
-</button>
-<button class="btn" type="button" onclick="window.print()">
-  Print / Save PDF
-</button>
 
       <div class="btnrow">
         <a class="btn primary" href="#impact">Selected Impact</a>
@@ -321,21 +398,21 @@ h2::before{
         <a class="btn" href="#value">How I Create Value</a>
         <a class="btn" href="#certs">Certifications</a>
         <a class="btn" href="Adeel-Ahmad-Resume.pdf" target="_blank" rel="noreferrer">Download Resume (PDF)</a>
+        <button class="btn" type="button" onclick="togglePrintMode()" aria-pressed="false" id="printToggleBtn">Print-friendly view</button>
+        <button class="btn" type="button" onclick="window.print()">Print / Save PDF</button>
       </div>
     </div>
 
     <div class="grid section">
-      <div class="card" id="impact">
+      <div class="card reveal" id="impact">
         <h2>Selected Impact</h2>
         <ul>
-  <li><b>Portfolio governance & controls:</b> established PMO operating rhythms, intake/prioritization, and KPI reporting—improving delivery success by <b>25%</b> and operational efficiency by <b>15%</b>.</li>
-  <li><b>Predictability & risk reduction:</b> strengthened KPI discipline, RAID governance, and escalation paths—reducing project risk by <b>30%</b> and increasing forecast confidence.</li>
-  <li><b>Execution acceleration:</b> scaled Agile/Hybrid delivery and capacity planning—raising delivery speed by <b>20%</b> and improving resource allocation by <b>50%</b>.</li>
-  <li><b>Transformation PMO enablement:</b> improved executive visibility and decision velocity across digital transformation—supporting growth from <b>$300M → $1B</b> in digital sales.</li>
-  <li><b>Operational efficiency:</b> redesigned onboarding/offboarding processes—reducing cost by <b>35%</b> through standardization and execution discipline.</li>
-</ul>
-
-
+          <li><b>Portfolio governance & controls:</b> established PMO operating rhythms, intake/prioritization, and KPI reporting—improving delivery success by <b>25%</b> and operational efficiency by <b>15%</b>.</li>
+          <li><b>Predictability & risk reduction:</b> strengthened KPI discipline, RAID governance, and escalation paths—reducing project risk by <b>30%</b> and increasing forecast confidence.</li>
+          <li><b>Execution acceleration:</b> scaled Agile/Hybrid delivery and capacity planning—raising delivery speed by <b>20%</b> and improving resource allocation by <b>50%</b>.</li>
+          <li><b>Transformation PMO enablement:</b> improved executive visibility and decision velocity across digital transformation—supporting growth from <b>$300M → $1B</b> in digital sales.</li>
+          <li><b>Operational efficiency:</b> redesigned onboarding/offboarding processes—reducing cost by <b>35%</b> through standardization and execution discipline.</li>
+        </ul>
 
         <div class="kpi">
           <div class="box"><div class="num">22+ years</div><div class="lbl">PMO & program leadership</div></div>
@@ -343,11 +420,11 @@ h2::before{
         </div>
       </div>
 
-      <div class="card" id="value">
+      <div class="card reveal" id="value">
         <h2>How I Create Value</h2>
         <ul>
           <li><b>PMO & portfolio governance:</b> operating rhythm, intake, prioritization, KPIs, steering cadences.</li>
-          <li><b>Execution systems:</b> Agile/Waterfall/Hybrid delivery, dependency mgmt, decision facilitation.</li>
+          <li><b>Execution systems:</b> Agile/Waterfall/Hybrid delivery, dependency management, decision facilitation.</li>
           <li><b>Resource & financial clarity:</b> capacity planning, forecasting, benefits/value realization.</li>
           <li><b>GenAI-enabled PMO:</b> automated status narratives, schedule variance summaries, risk trend detection, exec-ready briefs.</li>
           <li><b>Stakeholder alignment:</b> translate strategy into roadmaps, unblock cross-functional execution.</li>
@@ -356,170 +433,167 @@ h2::before{
       </div>
     </div>
 
-    <div class="card section" id="casestudies">
+    <div class="card section reveal" id="casestudies">
       <h2>Case Studies</h2>
-  
-     <p class="muted small">
-  <b>Executive takeaway:</b> These engagements demonstrate how disciplined PMO governance, portfolio controls, and GenAI-enabled insights drive predictability, faster decisions, and measurable business outcomes at enterprise scale.
-</p>     
-      <div class="tiles">
-
-  <div class="tile">
-    <div class="tag">State of New Jersey • PMO Governance</div>
-    <h3>Enterprise PMO operating model for predictable delivery</h3>
-<div class="csScale">Portfolio scale: $25M+ • 30+ initiatives • Multiple state agencies</div>
-
-    <div class="csLine">
-      <div class="csIcon" aria-hidden="true">🎯</div>
-      <p class="csText"><b>Context:</b> Large, multi-initiative portfolio lacked consistent governance, prioritization, and executive-level visibility.</p>
-    </div>
-
-    <div class="csLine">
-      <div class="csIcon" aria-hidden="true">🧭</div>
-      <p class="csText"><b>Actions:</b> Designed PMO operating model, intake/prioritization, KPI dashboards, and steering cadences to standardize execution.</p>
-    </div>
-
-    <div class="csLine">
-      <div class="csIcon" aria-hidden="true">📈</div>
-      <p class="csText"><b>Results:</b> Delivery success <b>+25%</b>, operational efficiency <b>+15%</b>, and shorter decision cycles through clearer escalation paths.</p>
-    </div>
-
-    <div class="csWhy">
-  <b>Why it mattered:</b> Executive leadership gained predictable delivery, clearer portfolio-level governance, and confidence that strategic initiatives were being executed as planned.
-</div>
-
-
-
-  <div class="tile">
-    <div class="tag">Deloitte • Risk & Predictability</div>
-    <h3>KPI-driven controls to reduce delivery risk</h3>
-<div class="csScale">Portfolio scale: $15M+ • 15+ workstreams • Multi-vendor delivery</div>
-
-    <div class="csLine">
-      <div class="csIcon" aria-hidden="true">🎯</div>
-      <p class="csText"><b>Context:</b> Complex consulting programs faced elevated delivery risk, dependencies, and inconsistent executive decision-making.</p>
-    </div>
-
-    <div class="csLine">
-      <div class="csIcon" aria-hidden="true">🧭</div>
-      <p class="csText"><b>Actions:</b> Implemented KPI discipline, RAID governance, dependency tracking, and executive-ready status narratives for faster decisions.</p>
-    </div>
-
-    <div class="csLine">
-      <div class="csIcon" aria-hidden="true">📈</div>
-      <p class="csText"><b>Results:</b> Project risk reduced by <b>30%</b> with clearer escalation paths, stronger predictability, and higher stakeholder confidence.</p>
-    </div>
-
-   <div class="csWhy">
-  <b>Why it mattered:</b> Stronger PMO controls reduced delivery volatility, improved forecast confidence, and enabled leadership to intervene early rather than react late.
-</div>
-
-
-
-  <div class="tile">
-    <div class="tag">Hackensack Meridian Health • GenAI PMO</div>
-    <h3>GenAI-enabled reporting and forecasting</h3>
-<div class="csScale">Portfolio scale: $20M+ • 20+ programs • Cross-functional clinical & IT teams</div>
-
-    <div class="csLine">
-      <div class="csIcon" aria-hidden="true">🎯</div>
-      <p class="csText"><b>Context:</b> Manual reporting slowed decision-making across a fast-moving healthcare transformation portfolio.</p>
-    </div>
-
-    <div class="csLine">
-      <div class="csIcon" aria-hidden="true">🧭</div>
-      <p class="csText"><b>Actions:</b> Applied GenAI to automate status narratives, forecasting summaries, and risk insights—reducing reporting friction for leaders.</p>
-    </div>
-
-    <div class="csLine">
-      <div class="csIcon" aria-hidden="true">📈</div>
-      <p class="csText"><b>Results:</b> Delivery speed <b>+20%</b>, resource allocation <b>+50%</b>, and faster, clearer executive updates that improved decision velocity.</p>
-    </div>
-
-    <div class="csWhy">
-  <b>Why it mattered:</b> Leadership shifted from manual reporting to insight-driven portfolio management, accelerating decisions across clinical and IT transformation initiatives.
-</div>
-
-
-</div>
-
-
-      <p class="muted small" style="margin-top:12px">
-        Want this even stronger? We can swap these into real “mini case studies” with 3 lines each: <span class="mono">Context → Actions → Results</span>.
+      <p class="muted small">
+        <b>Executive takeaway:</b> These engagements demonstrate how disciplined PMO governance, portfolio controls, and GenAI-enabled insights drive predictability, faster decisions, and measurable business outcomes at enterprise scale.
       </p>
-    </div>
 
-    <div class="grid section">
-      <div class="card" id="certs">
-        <h2>Certifications (with logos)</h2>
-        
-        <div class="logoGrid">
+      <div class="tiles">
+        <div class="tile reveal">
+          <div class="tag">State of New Jersey • PMO Governance</div>
+          <h3>Enterprise PMO operating model for predictable delivery</h3>
+          <div class="csScale">Portfolio scale: $25M+ • 30+ initiatives • Multiple state agencies</div>
 
-  <a class="logo"
-     href="https://www.credly.com/badges/8632f339-561b-4e9c-8f62-d1d7276effde"
-     target="_blank" rel="noreferrer">
-    <div class="logoTitle">PMP</div>
-    <img src="img/PMI-PMP_Badge.png" alt="PMP badge">
-  </a>
-
-  <a class="logo"
-     href="https://www.credly.com/badges/df4c6380-a8da-4bb8-b2a2-7df61a120e0f/public_url"
-     target="_blank" rel="noreferrer">
-    <div class="logoTitle">PMI-ACP</div>
-    <img src="img/PMI-ACP_Badge.png" alt="PMI-ACP badge">
-  </a>
-
-  <div class="logo">
-    <div class="logoTitle">Gen. AI in PM</div>
-    <img src="img/CGAIPM_BADGE.jpg" alt="Generative AI in Project Management">
-  </div>
-
-  <div class="logo">
-    <div class="logoTitle">ITIL</div>
-    <img src="img/ITIL_Badge.png" alt="ITIL badge">
-  </div>
-
-  <div class="logo">
-    <div class="logoTitle">PRINCE2</div>
-    <img src="img/Prince2_Badge.png" alt="PRINCE2 badge">
-  </div>
-
-  <div class="logo">
-    <div class="logoTitle">CSM</div>
-    <img src="img/CSM_Badge.png" alt="Certified ScrumMaster badge">
-  </div>
-
-</div>
-
-   
-        
-      </div>
-
-      <div class="card">
-        <h2>Tools</h2>
-        <div class="muted">Jira, Confluence, MS Project, Power BI, ServiceNow, SharePoint, Smartsheet, Rally, Trello, Asana, Monday.com</div>
-
-        <div style="margin-top:12px">
-          <h2>Leadership Snapshot</h2>
-          <div class="muted">
-            Remote • Enterprise PMO • Digital transformation • Executive reporting • Governance • Agile/Hybrid delivery • GenAI enablement
+          <div class="csLine">
+            <div class="csIcon" aria-hidden="true">🎯</div>
+            <p class="csText"><b>Context:</b> Large, multi-initiative portfolio lacked consistent governance, prioritization, and executive-level visibility.</p>
           </div>
+
+          <div class="csLine">
+            <div class="csIcon" aria-hidden="true">🧭</div>
+            <p class="csText"><b>Actions:</b> Designed PMO operating model, intake/prioritization, KPI dashboards, and steering cadences to standardize execution.</p>
+          </div>
+
+          <div class="csLine">
+            <div class="csIcon" aria-hidden="true">📈</div>
+            <p class="csText"><b>Results:</b> Delivery success <b>+25%</b>, operational efficiency <b>+15%</b>, and shorter decision cycles through clearer escalation paths.</p>
+          </div>
+
+          <div class="csWhy"><b>Why it mattered:</b> Executive leadership gained predictable delivery, clearer portfolio-level governance, and confidence that strategic initiatives were being executed as planned.</div>
+        </div>
+
+        <div class="tile reveal">
+          <div class="tag">Deloitte • Risk & Predictability</div>
+          <h3>KPI-driven controls to reduce delivery risk</h3>
+          <div class="csScale">Portfolio scale: $15M+ • 15+ workstreams • Multi-vendor delivery</div>
+
+          <div class="csLine">
+            <div class="csIcon" aria-hidden="true">🎯</div>
+            <p class="csText"><b>Context:</b> Complex consulting programs faced elevated delivery risk, dependencies, and inconsistent executive decision-making.</p>
+          </div>
+
+          <div class="csLine">
+            <div class="csIcon" aria-hidden="true">🧭</div>
+            <p class="csText"><b>Actions:</b> Implemented KPI discipline, RAID governance, dependency tracking, and executive-ready status narratives for faster decisions.</p>
+          </div>
+
+          <div class="csLine">
+            <div class="csIcon" aria-hidden="true">📈</div>
+            <p class="csText"><b>Results:</b> Project risk reduced by <b>30%</b> with clearer escalation paths, stronger predictability, and higher stakeholder confidence.</p>
+          </div>
+
+          <div class="csWhy"><b>Why it mattered:</b> Stronger PMO controls reduced delivery volatility, improved forecast confidence, and enabled leadership to intervene early rather than react late.</div>
+        </div>
+
+        <div class="tile reveal">
+          <div class="tag">Hackensack Meridian Health • GenAI PMO</div>
+          <h3>GenAI-enabled reporting and forecasting</h3>
+          <div class="csScale">Portfolio scale: $20M+ • 20+ programs • Cross-functional clinical & IT teams</div>
+
+          <div class="csLine">
+            <div class="csIcon" aria-hidden="true">🎯</div>
+            <p class="csText"><b>Context:</b> Manual reporting slowed decision-making across a fast-moving healthcare transformation portfolio.</p>
+          </div>
+
+          <div class="csLine">
+            <div class="csIcon" aria-hidden="true">🧭</div>
+            <p class="csText"><b>Actions:</b> Applied GenAI to automate status narratives, forecasting summaries, and risk insights—reducing reporting friction for leaders.</p>
+          </div>
+
+          <div class="csLine">
+            <div class="csIcon" aria-hidden="true">📈</div>
+            <p class="csText"><b>Results:</b> Delivery speed <b>+20%</b>, resource allocation <b>+50%</b>, and faster, clearer executive updates that improved decision velocity.</p>
+          </div>
+
+          <div class="csWhy"><b>Why it mattered:</b> Leadership shifted from manual reporting to insight-driven portfolio management, accelerating decisions across clinical and IT transformation initiatives.</div>
         </div>
       </div>
     </div>
 
-    
+    <div class="grid section">
+      <div class="card reveal" id="certs">
+        <h2>Certifications</h2>
+
+        <div class="logoGrid">
+          <a class="logo reveal" href="https://www.credly.com/badges/8632f339-561b-4e9c-8f62-d1d7276effde" target="_blank" rel="noreferrer" title="PMP (Credly Verification)">
+            <div class="logoTitle">PMP</div>
+            <img src="img/pmp.png" alt="PMP badge">
+          </a>
+
+          <a class="logo reveal" href="https://www.credly.com/badges/df4c6380-a8da-4bb8-b2a2-7df61a120e0f/public_url" target="_blank" rel="noreferrer" title="PMI-ACP (Credly Verification)">
+            <div class="logoTitle">PMI-ACP</div>
+            <img src="img/pmiacp.png" alt="PMI-ACP badge">
+          </a>
+
+          <div class="logo reveal" title="Gen. AI in PM">
+            <div class="logoTitle">Gen. AI in PM</div>
+            <img src="img/genai.png" alt="Generative AI in Project Management badge">
+          </div>
+
+          <div class="logo reveal" title="ITIL">
+            <div class="logoTitle">ITIL</div>
+            <img src="img/itil.png" alt="ITIL badge">
+          </div>
+
+          <div class="logo reveal" title="PRINCE2">
+            <div class="logoTitle">PRINCE2</div>
+            <img src="img/prince2.png" alt="PRINCE2 badge">
+          </div>
+
+          <div class="logo reveal" title="CSM">
+            <div class="logoTitle">CSM</div>
+            <img src="img/csm.png" alt="Certified ScrumMaster badge">
+          </div>
+        </div>
+      </div>
+
+      <div class="card reveal">
+        <h2>Tools</h2>
+        <div class="muted">Jira, Confluence, MS Project, Power BI, ServiceNow, SharePoint, Smartsheet, Rally, Trello, Asana, Monday.com</div>
+
+        <div style="margin-top:14px">
+          <h2>Leadership Snapshot</h2>
+          <div class="muted">
+            Remote • Enterprise PMO • Digital transformation • Executive reporting • Portfolio governance • Predictability • GenAI enablement
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-<script>
-  function togglePrintMode(){
-    const html = document.documentElement;
-    const btn = document.getElementById('printToggleBtn');
-    const isOn = html.classList.toggle('print-mode');
-    if (btn) btn.setAttribute('aria-pressed', String(isOn));
-  }
-</script>
 
+  <script>
+    // Reveal-on-scroll using IntersectionObserver (no libraries)
+    (function () {
+      const items = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window) || !items.length) {
+        items.forEach(el => el.classList.add('is-visible'));
+        return;
+      }
 
-        
+      // Stagger delays (nice polish) - keeps different groups feeling intentional
+      items.forEach((el, i) => {
+        el.style.setProperty('--delay', `${(i % 18) * 45}ms`);
+      });
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15, rootMargin: '0px 0px -10% 0px' });
+
+      items.forEach(el => observer.observe(el));
+    })();
+
+    function togglePrintMode(){
+      const html = document.documentElement;
+      const btn = document.getElementById('printToggleBtn');
+      const isOn = html.classList.toggle('print-mode');
+      if (btn) btn.setAttribute('aria-pressed', String(isOn));
+    }
+  </script>
 </body>
 </html>
