@@ -306,11 +306,17 @@
       box-shadow: 0 14px 28px rgba(0,0,0,.22);
     }
     .logoTitle{
-      font-size:14px;
-      font-weight:600;
-      letter-spacing:.03em;
-      color:var(--text);
-    }
+    font-size:14px;
+    font-weight:600;
+    letter-spacing:.03em;
+    color:var(--text);
+    min-height: 2.6em;        /* reserves space for 2 lines */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
     .logo img{
       max-height:62px;   /* ~40% larger */
       max-width:100%;
@@ -535,8 +541,7 @@
           </div>
 
           <div class="logo reveal" title="PRINCE2">
-            <div class="logoTitle">xxPRINCE2 Certified</div>
-            <div></div>
+            <div class="logoTitle">PRINCE2 Certified</div>
             <img src="img/prince2.png" alt="PRINCE2 badge">
           </div>
 
