@@ -14,6 +14,7 @@
       --line:rgba(255,255,255,.10);
       --accent:#8ab4ff;          /* Executive accent */
       --good:#79ffd2;            /* subtle secondary */
+      --warn:#ffd08a;            /* subtle warm highlight */
     }
 
     *{box-sizing:border-box}
@@ -78,12 +79,46 @@
       letter-spacing:-.02em;
     }
 
-    .subhead{
-      margin-top:10px;
+    /* Header differentiation */
+    .headlineBlock{
+      margin-top:12px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+    .headlineTitle{
+      display:inline-block;
+      font-weight:800;
+      font-size:16px;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      color:rgba(233,238,252,.92);
+      padding-left:12px;
+      position:relative;
+    }
+    .headlineTitle::before{
+      content:"";
+      position:absolute;
+      left:0; top:2px;
+      width:3px; height:16px;
+      border-radius:8px;
+      background: linear-gradient(180deg, var(--accent), rgba(121,255,210,.55));
+    }
+    .headlineSummary{
       color:var(--muted);
       font-size:18px;
-      max-width:860px;
+      max-width:900px;
     }
+    .philosophy{
+      color:var(--muted);
+      font-size:13px;
+      padding:10px 12px;
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:14px;
+      background: rgba(255,255,255,.02);
+      max-width:900px;
+    }
+    .philosophy b{ color: var(--text); }
 
     .btnrow{
       display:flex;
@@ -360,6 +395,14 @@
       border-top-color:#e5e7eb !important;
       color:#374151 !important;
     }
+    .print-mode .headlineTitle::before{
+      background:#111827 !important;
+    }
+    .print-mode .philosophy{
+      border-color:#e5e7eb !important;
+      background:#f9fafb !important;
+      color:#374151 !important;
+    }
 
     @media print{
       .btnrow, .btn, #printToggleBtn { display:none !important; }
@@ -383,11 +426,14 @@
 
     <div class="card reveal">
       <h1>Adeel Ahmad</h1>
-      <div class="subhead">
-        <b>PMO Director | GenAI & Digital Transformation PMO (Remote)</b><br/>
-        I build PMOs that make execution predictable—combining governance, Agile/Hybrid delivery, and GenAI-enabled reporting,
-        forecasting, and risk insights so leaders make faster decisions with fewer surprises.
-        <div class="muted small" style="margin-top:10px">
+
+      <div class="headlineBlock">
+        <div class="headlineTitle">PMO Director | GenAI & Digital Transformation PMO (Remote)</div>
+        <div class="headlineSummary">
+          I build PMOs that make execution predictable—combining governance, Agile/Hybrid delivery, and GenAI-enabled reporting,
+          forecasting, and risk insights so leaders make faster decisions with fewer surprises.
+        </div>
+        <div class="philosophy">
           <b>PMO Director Philosophy:</b> Build simple governance, make decisions visible, and run the portfolio on trusted data—so delivery becomes predictable and outcomes repeatable.
         </div>
       </div>
@@ -436,33 +482,35 @@
     <div class="card section reveal" id="casestudies">
       <h2>Case Studies</h2>
       <p class="muted small">
-        <b>Executive takeaway:</b> These engagements demonstrate how disciplined PMO governance, portfolio controls, and GenAI-enabled insights drive predictability, faster decisions, and measurable business outcomes at enterprise scale.
+        <b>Executive takeaway:</b> These engagements demonstrate how disciplined PMO governance, portfolio controls, and AI-enabled insights drive predictability, faster decisions, and measurable business outcomes at enterprise scale.
       </p>
 
       <div class="tiles">
+        <!-- State of New Jersey: MORE AI-focused -->
         <div class="tile reveal">
-          <div class="tag">State of New Jersey • PMO Governance</div>
-          <h3>Enterprise PMO operating model for predictable delivery</h3>
+          <div class="tag">State of New Jersey • AI-Enabled PMO</div>
+          <h3>AI-assisted portfolio reporting and risk visibility</h3>
           <div class="csScale">Portfolio scale: $25M+ • 30+ initiatives • Multiple state agencies</div>
 
           <div class="csLine">
             <div class="csIcon" aria-hidden="true">🎯</div>
-            <p class="csText"><b>Context:</b> Large, multi-initiative portfolio lacked consistent governance, prioritization, and executive-level visibility.</p>
+            <p class="csText"><b>Context:</b> Executive reporting was manual and inconsistent, slowing decisions and limiting early risk detection across a multi-agency portfolio.</p>
           </div>
 
           <div class="csLine">
             <div class="csIcon" aria-hidden="true">🧭</div>
-            <p class="csText"><b>Actions:</b> Designed PMO operating model, intake/prioritization, KPI dashboards, and steering cadences to standardize execution.</p>
+            <p class="csText"><b>Actions:</b> Implemented PMO governance and introduced AI-assisted status narratives, variance summaries, and risk/issue trend insights to standardize portfolio visibility.</p>
           </div>
 
           <div class="csLine">
             <div class="csIcon" aria-hidden="true">📈</div>
-            <p class="csText"><b>Results:</b> Delivery success <b>+25%</b>, operational efficiency <b>+15%</b>, and shorter decision cycles through clearer escalation paths.</p>
+            <p class="csText"><b>Results:</b> Faster, more consistent executive updates; improved predictability and control, contributing to delivery success <b>+25%</b> and operational efficiency <b>+15%</b>.</p>
           </div>
 
-          <div class="csWhy"><b>Why it mattered:</b> Executive leadership gained predictable delivery, clearer portfolio-level governance, and confidence that strategic initiatives were being executed as planned.</div>
+          <div class="csWhy"><b>Why it mattered:</b> Leadership gained trusted, decision-ready portfolio intelligence—reducing reporting friction and enabling earlier interventions.</div>
         </div>
 
+        <!-- Deloitte: keep as risk/predictability -->
         <div class="tile reveal">
           <div class="tag">Deloitte • Risk & Predictability</div>
           <h3>KPI-driven controls to reduce delivery risk</h3>
@@ -486,27 +534,28 @@
           <div class="csWhy"><b>Why it mattered:</b> Stronger PMO controls reduced delivery volatility, improved forecast confidence, and enabled leadership to intervene early rather than react late.</div>
         </div>
 
+        <!-- Hackensack: NO AI; PMO/project delivery focus -->
         <div class="tile reveal">
-          <div class="tag">Hackensack Meridian Health • GenAI PMO</div>
-          <h3>GenAI-enabled reporting and forecasting</h3>
+          <div class="tag">Hackensack Meridian Health • Delivery PMO</div>
+          <h3>Delivery governance to improve speed and resource alignment</h3>
           <div class="csScale">Portfolio scale: $20M+ • 20+ programs • Cross-functional clinical & IT teams</div>
 
           <div class="csLine">
             <div class="csIcon" aria-hidden="true">🎯</div>
-            <p class="csText"><b>Context:</b> Manual reporting slowed decision-making across a fast-moving healthcare transformation portfolio.</p>
+            <p class="csText"><b>Context:</b> A fast-moving healthcare transformation portfolio needed stronger delivery governance, dependency visibility, and consistent execution across teams.</p>
           </div>
 
           <div class="csLine">
             <div class="csIcon" aria-hidden="true">🧭</div>
-            <p class="csText"><b>Actions:</b> Applied GenAI to automate status narratives, forecasting summaries, and risk insights—reducing reporting friction for leaders.</p>
+            <p class="csText"><b>Actions:</b> Established PMO cadences (planning, status, RAID), improved dependency management, and strengthened capacity planning to align delivery across clinical and IT stakeholders.</p>
           </div>
 
           <div class="csLine">
             <div class="csIcon" aria-hidden="true">📈</div>
-            <p class="csText"><b>Results:</b> Delivery speed <b>+20%</b>, resource allocation <b>+50%</b>, and faster, clearer executive updates that improved decision velocity.</p>
+            <p class="csText"><b>Results:</b> Delivery speed increased <b>20%</b>, resource allocation improved <b>50%</b>, and leadership gained clearer portfolio visibility and execution predictability.</p>
           </div>
 
-          <div class="csWhy"><b>Why it mattered:</b> Leadership shifted from manual reporting to insight-driven portfolio management, accelerating decisions across clinical and IT transformation initiatives.</div>
+          <div class="csWhy"><b>Why it mattered:</b> The organization achieved steadier execution and faster delivery—without sacrificing governance, alignment, or stakeholder confidence.</div>
         </div>
       </div>
     </div>
@@ -528,7 +577,7 @@
 
           <div class="logo reveal" title="Gen. AI in PM">
             <div class="logoTitle">Gen. AI in PM</div>
-            <img src="img/genai.jpg" alt="Generative AI in Project Management badge">
+            <img src="img/genai.png" alt="Generative AI in Project Management badge">
           </div>
 
           <div class="logo reveal" title="ITIL">
@@ -555,7 +604,7 @@
         <div style="margin-top:14px">
           <h2>Leadership Snapshot</h2>
           <div class="muted">
-            Remote • Enterprise PMO • Digital transformation • Executive reporting • Portfolio governance • Predictability • GenAI enablement
+            Remote • Enterprise PMO • Digital transformation • Executive reporting • Portfolio governance • Predictability • AI-enabled decision support
           </div>
         </div>
       </div>
