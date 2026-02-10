@@ -340,76 +340,24 @@
       }
     }
 
-    /* === Print-friendly mode (toggle) === */
-    .print-mode{
-      background: #ffffff !important;
-      color: #111827 !important;
-    }
-    .print-mode body{
-      background: #ffffff !important;
-      color: #111827 !important;
-    }
-    .print-mode .wrap{
-      max-width: 900px !important;
-      padding: 28px 18px 40px !important;
-    }
-    .print-mode .card,
-    .print-mode .tile,
-    .print-mode .logo{
-      background: #ffffff !important;
-      color: #111827 !important;
-      border: 1px solid #e5e7eb !important;
-      box-shadow: none !important;
-      backdrop-filter: none !important;
-    }
-    .print-mode a{ color: #111827 !important; text-decoration: underline; }
-    .print-mode .muted{ color:#4b5563 !important; }
-    .print-mode .pill{
-      background:#fff !important;
-      color:#4b5563 !important;
-      border-color:#e5e7eb !important;
-      backdrop-filter:none !important;
-    }
-    .print-mode .btnrow, .print-mode .btn{ display:none !important; }
-    .print-mode .tag{
-      color:#111827 !important;
-      border-color:#e5e7eb !important;
-      background:#f9fafb !important;
-    }
-    .print-mode h2{
-      color:#111827 !important;
-    }
-    .print-mode h2::before{
-      background:#111827 !important;
-    }
-    .print-mode .csScale{
-      border-color:#e5e7eb !important;
-      background:#f9fafb !important;
-      color:#374151 !important;
-    }
-    .print-mode .csIcon{
-      border-color:#e5e7eb !important;
-      background:#f9fafb !important;
-    }
-    .print-mode .csWhy{
-      border-top-color:#e5e7eb !important;
-      color:#374151 !important;
-    }
-    .print-mode .headlineTitle::before{
-      background:#111827 !important;
-    }
-    .print-mode .philosophy{
-      border-color:#e5e7eb !important;
-      background:#f9fafb !important;
-      color:#374151 !important;
-    }
-
+    /* Print rules only (no toggle button) */
     @media print{
-      .btnrow, .btn, #printToggleBtn { display:none !important; }
+      .btnrow, .btn { display:none !important; }
       .card, .tile, .logo { break-inside: avoid; page-break-inside: avoid; }
       body{ background:#fff !important; color:#111827 !important; }
       .tiles{ grid-template-columns: 1fr; }
       .logoGrid{ grid-template-columns: repeat(3, 1fr); }
+      a{ color:#111827 !important; text-decoration: underline; }
+      .muted{ color:#4b5563 !important; }
+      .pill{ border-color:#e5e7eb !important; background:#fff !important; color:#4b5563 !important; }
+      .card, .tile, .logo{ background:#fff !important; border-color:#e5e7eb !important; box-shadow:none !important; }
+      .tag{ border-color:#e5e7eb !important; background:#f9fafb !important; color:#111827 !important; }
+      .csScale{ border-color:#e5e7eb !important; background:#f9fafb !important; color:#374151 !important; }
+      .csIcon{ border-color:#e5e7eb !important; background:#f9fafb !important; }
+      .csWhy{ border-top-color:#e5e7eb !important; color:#374151 !important; }
+      h2::before{ background:#111827 !important; }
+      .headlineTitle::before{ background:#111827 !important; }
+      .philosophy{ border-color:#e5e7eb !important; background:#f9fafb !important; color:#374151 !important; }
     }
   </style>
 </head>
@@ -444,7 +392,6 @@
         <a class="btn" href="#value">How I Create Value</a>
         <a class="btn" href="#certs">Certifications</a>
         <a class="btn" href="Adeel-Ahmad-Resume.pdf" target="_blank" rel="noreferrer">Download Resume (PDF)</a>
-        <button class="btn" type="button" onclick="togglePrintMode()" aria-pressed="false" id="printToggleBtn">Print-friendly view</button>
         <button class="btn" type="button" onclick="window.print()">Print / Save PDF</button>
       </div>
     </div>
@@ -620,7 +567,7 @@
         return;
       }
 
-      // Stagger delays (nice polish) - keeps different groups feeling intentional
+      // Stagger delays (nice polish)
       items.forEach((el, i) => {
         el.style.setProperty('--delay', `${(i % 18) * 45}ms`);
       });
@@ -636,13 +583,6 @@
 
       items.forEach(el => observer.observe(el));
     })();
-
-    function togglePrintMode(){
-      const html = document.documentElement;
-      const btn = document.getElementById('printToggleBtn');
-      const isOn = html.classList.toggle('print-mode');
-      if (btn) btn.setAttribute('aria-pressed', String(isOn));
-    }
   </script>
 </body>
 </html>
